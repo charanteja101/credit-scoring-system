@@ -1,0 +1,47 @@
+{
+  "n_loans": 1079925,
+  "n_train": 411274,
+  "n_test": 668651,
+  "default_rate": 0.19898233673634744,
+  "train_default_rate": 0.17222095245505428,
+  "test_default_rate": 0.21544273470016495,
+  "train_end_year": 2014,
+  "scorecard_train": {
+    "auc": 0.6831,
+    "gini": 0.3662,
+    "ks": 0.2665
+  },
+  "scorecard_test": {
+    "auc": 0.6924,
+    "gini": 0.3847,
+    "ks": 0.2741
+  },
+  "features_used": [
+    "term_months",
+    "loan_to_income",
+    "fico_avg",
+    "dti",
+    "verification_status",
+    "annual_inc",
+    "loan_amnt",
+    "revol_util",
+    "inq_last_6mths",
+    "mort_acc"
+  ],
+  "score_psi_train_vs_test": 0.003,
+  "scaling": {
+    "base_score": 600,
+    "base_odds": 50,
+    "pdo": 20
+  },
+  "gradient_boosting_test": {
+    "auc": 0.708,
+    "gini": 0.416,
+    "ks": 0.2989
+  },
+  "gradient_boosting_train": {
+    "auc": 0.7141,
+    "gini": 0.4282,
+    "ks": 0.3102
+  }
+}
