@@ -6,8 +6,6 @@ scorecard (300–850 points) → out-of-time evaluation → interactive Streamli
 
 ## Screenshots
 
-> Images are generated from your own run: see [Generate the screenshots](#generate-the-screenshots).
-
 ### Executive Overview
 ![Executive Overview](docs/images/01_overview.png)
 
@@ -44,14 +42,6 @@ scorecard (300–850 points) → out-of-time evaluation → interactive Streamli
 
 ### Applicant Scoring
 ![Applicant scoring](docs/images/07_applicant_scoring.png)
-
-### Generate the screenshots
-```bash
-pip install playwright
-python -m playwright install chromium
-python scripts/capture_screenshots.py     # saves PNGs to docs/images/
-```
-The script starts the app, opens each page and tab, and saves the pictures. Run `python -m src.train` first.
 
 ## Results (out-of-time test: loans issued 2015–2016)
 
@@ -101,9 +91,7 @@ credit_scoring_system/
 ├── app.py                    # single-file Streamlit dashboard (7 pages)
 ├── requirements.txt
 ├── .streamlit/config.toml    # theme
-├── scripts/
-│   └── capture_screenshots.py  # creates docs/images/*.png for this README
-├── docs/images/              # screenshots (generated)
+├── docs/images/              # screenshots used in this README
 ├── src/
 │   ├── config.py             # all settings (years, features, scaling)
 │   ├── data_prep.py          # load, filter, target, feature engineering
@@ -183,3 +171,7 @@ python -m streamlit run app.py   # full dashboard
 - Train on 2012–2015 and test on 2016 to reduce drift (`TRAIN_END_YEAR = 2015`)
 - Monotonic binning, SHAP explanations for the gradient-boosting benchmark
 - Add a profit-based cut-off analysis (expected loss vs interest income)
+
+## Disclaimer
+
+This is a portfolio project for learning purposes. It uses historical, public LendingClub loan data from 2012 to 2016 and is not a real credit decision tool. The scores, cut-offs and profit figures are illustrative: they rest on simplified assumptions, have not been validated for production use, and must not be used to approve, decline or price real loans or as financial advice. The dataset belongs to its original publishers, so follow its licence and terms on Kaggle.
